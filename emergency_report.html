@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Give your Report</title>
+    <style>
+        input[type="text"],
+        input[type="file"] {
+            font-size: 45px; 
+            padding: 10px; 
+            border-radius: 5px; 
+            border: 1px solid #ccc;
+            background-color: #848484;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="color: red; font-family: sans-serif; font-weight: 1000; font-size: 50px;">Emergency Report</h1>
+    </header>
+    <form action="/submit_report" method="post" enctype="multipart/form-data">
+        <h2 style="font-weight: 800; font-family: sans-serif; font-size: 45px;">Address: <input type="text" name="Address"></h2>
+        <h2 style="font-weight: 800; font-family: sans-serif; font-size: 45px;">Message:</h2>
+        <textarea name="message" rows="15" cols="80" style="background-color: #848484;"></textarea><br><br>
+        <h2 style="font-family: sans-serif; font-weight: 800; font-size: 45px;">Select Media: <input type="file" name="mediaFile" accept="audio/*, video/*, image/*"></h2>
+        <input type="submit" value="Submit Report" style="background-color: green; color: white; height: 50px; width: 170px; font-size: 20px; border-radius: 10px;">
+    </form>
+</body>
+</html>
