@@ -34,14 +34,12 @@
     <main>
         <div id="homePage">
           
-            <!-- Buttons for help and emergency -->
             <div class="buttons">
                 <button id="needHelpBtn">Need any Help?</button>
-                <button id="emergencyBtn" class="red">+Emergency</button>
+                <button id="emergencyBtn" class="red" style="background-color: red;">+Emergency</button>
             </div>
         </div>
 
-        <!-- Popup for help form -->
         <div id="helpPopup" class="popup">
             <div class="popup-content">
                 <span class="close">&times;</span>
@@ -58,20 +56,18 @@
             </div>
         </div>
 
-        <!-- Popup for emergency options -->
         <div id="emergencyPopup" class="popup">
             <div class="popup-content">
                 <span class="close">&times;</span>
                 <h2>Emergency</h2>
                 <ul>
-                    <li><button id="callPoliceBtn">Call Police</button></li>
-                    <li><button id="callAmbulanceBtn">Call Ambulance</button></li>
-                    <li><button id="reportBtn"><a href="emergency_report.html">Report</a></button></li>
+                    <li><button id="callPoliceBtn" style="background-color: red; color: white; font-weight: bold;">Call Police</button></li>
+                    <li><button id="callAmbulanceBtn" style="background-color: red; color: white; font-weight: bold;">Call Ambulance</button></li>
+                    <li><button id="reportBtn" style="background-color: red; color: white; font-weight: bold;" onclick="redirectToEmergencyPage()">Report</button></li>
                 </ul>
             </div>
         </div>
 
-        <!-- Popup for report form -->
         <div id="reportPopup" class="popup">
             <div class="popup-content">
                 <span class="close">&times;</span>
@@ -83,7 +79,6 @@
             </div>
         </div>
 
-        <!-- Display section for issues -->
         <div id="issuesPage" style="display: none;">
             <div id="sortOptions">
                 <label for="sortSelect">Sort by:</label>
@@ -92,10 +87,8 @@
                     <option value="recent">By Recent</option>
                 </select>
             </div>
-            <!-- Issues will be displayed here -->
         </div>
 
-        <!-- Display section for notices -->
         <div id="noticePage" style="display: none;">
             <h2>Important Notices</h2>
             <div class="notice">
