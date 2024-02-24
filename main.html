@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>apnaConnect</h1>
+    <header style="background-image: url(heart_hand.jpg); background-size:100% 100% ; background-repeat: no-repeat; margin-bottom:50px;"> 
+        <h1 style="color: black; -webkit-text-stroke: 0.5px; -webkit-text-stroke-color: white; ">apnaConnect</h1>
         <div class="lang-dropdown">
             <button class="lang-btn">Lang</button>
             <div class="lang-dropdown-content">
@@ -19,16 +19,17 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#" id="issuesTab">Issues</a></li>
-                
-                <li><a href="#" id="noticeTab">Notice</a></li>
+                <li><a href="#" id="issuesTab" style="color: black; font-weight: bold; background-color: azure; border-radius: 5px; padding: 5px;">Issues</a></li>
+                 
+                <li><a href="#" id="noticeTab" style="color: black; font-weight: bold; background-color: azure; border-radius: 5px;padding: 5px;">Notice</a></li>
                 
             </ul>
         </nav>
     </header>
 
     <marquee>
-        <b><a>NOTICE</a></b>  Notice headline 1 ;  Notice headline 2 ; Notice headline 3 ;
+        <b><a>NOTICE</a></b>  Food warning : Please be advised that food prepared here may contain these ingredients:
+        milk, eggs, wheat, soybean, peanuts, tree nuts, fish, and shellfish. ;  Notice headline 2 ; Notice headline 3 ;
     </marquee>
 
     <main>
@@ -50,6 +51,7 @@
                     <input type="text" id="nameInput" placeholder="Name"><br>
                     <input type="text" id="addressInput" placeholder="Address"><br>
                     <textarea id="detailsInput" placeholder="Details of issue"></textarea><br>
+                    <!-- Input field for media -->
                     <input type="file" id="mediaInput"><br>
                     <button type="submit">Submit</button>
                 </form>
@@ -111,5 +113,44 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <script>
+        // JavaScript code to handle media file
+        document.getElementById('helpForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get form elements
+            var name = document.getElementById('nameInput').value;
+            var address = document.getElementById('addressInput').value;
+            var details = document.getElementById('detailsInput').value;
+            var media = document.getElementById('mediaInput').files[0]; // Get the selected file
+
+            // Create a FileReader object to read the file
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                var mediaURL = e.target.result; // Get the URL of the media file
+
+                // Display the media along with other details
+                var mediaDisplay = '';
+                if (media.type.includes('image')) {
+                    mediaDisplay = '<img src="' + mediaURL + '" alt="Media">';
+                } else if (media.type.includes('video')) {
+                    mediaDisplay = '<video controls><source src="' + mediaURL + '" type="' + media.type + '">Your browser does not support the video tag.</video>';
+                }
+
+                // Display the details including media
+                alert('Name: ' + name + '\nAddress: ' + address + '\nDetails: ' + details);
+                document.getElementById('detailsDisplay').innerHTML = '<h2>Details</h2>' +
+                                                                     '<p>Name: ' + name + '</p>' +
+                                                                     '<p>Address: ' + address + '</p>' +
+                                                                     '<p>Details: ' + details + '</p>' +
+                                                                     '<p>Media: ' + mediaDisplay + '</p>';
+            };
+
+            // Read the file as Data URL
+            reader.readAsDataURL(media);
+        });
+    </script>
 </body>
 </html>
