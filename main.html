@@ -115,23 +115,23 @@
     <script src="script.js"></script>
 
     <script>
-        // JavaScript code to handle media file
+    
         document.getElementById('helpForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent form submission
+            event.preventDefault(); 
 
-            // Get form elements
+            
             var name = document.getElementById('nameInput').value;
             var address = document.getElementById('addressInput').value;
             var details = document.getElementById('detailsInput').value;
-            var media = document.getElementById('mediaInput').files[0]; // Get the selected file
+            var media = document.getElementById('mediaInput').files[0]; 
 
-            // Create a FileReader object to read the file
+            
             var reader = new FileReader();
 
             reader.onload = function(e) {
-                var mediaURL = e.target.result; // Get the URL of the media file
+                var mediaURL = e.target.result; 
 
-                // Display the media along with other details
+                
                 var mediaDisplay = '';
                 if (media.type.includes('image')) {
                     mediaDisplay = '<img src="' + mediaURL + '" alt="Media">';
@@ -139,7 +139,7 @@
                     mediaDisplay = '<video controls><source src="' + mediaURL + '" type="' + media.type + '">Your browser does not support the video tag.</video>';
                 }
 
-                // Display the details including media
+                
                 alert('Name: ' + name + '\nAddress: ' + address + '\nDetails: ' + details);
                 document.getElementById('detailsDisplay').innerHTML = '<h2>Details</h2>' +
                                                                      '<p>Name: ' + name + '</p>' +
@@ -148,7 +148,6 @@
                                                                      '<p>Media: ' + mediaDisplay + '</p>';
             };
 
-            // Read the file as Data URL
             reader.readAsDataURL(media);
         });
     </script>
