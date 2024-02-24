@@ -176,3 +176,30 @@ document.getElementById('reportForm').addEventListener('submit', function(event)
     }
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    // Display the "Issues" tab content
+    document.getElementById("issuesPage").style.display = "block";
+    
+    // Hide the "Notice" tab content
+    document.getElementById("noticePage").style.display = "none";
+    
+    // Add active class to the "Issues" tab
+    document.getElementById("issuesTab").classList.add("active");
+});
+
+// Function to switch between tabs
+function switchTab(tabName) {
+    // Hide all tab contents
+    document.getElementById("issuesPage").style.display = "none";
+    document.getElementById("noticePage").style.display = "none";
+    
+    // Remove active class from all tabs
+    document.getElementById("issuesTab").classList.remove("active");
+    document.getElementById("noticeTab").classList.remove("active");
+    
+    // Show the selected tab content
+    document.getElementById(tabName + "Page").style.display = "block";
+    
+    // Add active class to the selected tab
+    document.getElementById(tabName + "Tab").classList.add("active");
+}
