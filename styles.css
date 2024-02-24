@@ -89,7 +89,7 @@ button {
 }
 
 .red {
-    background-color: #e74c3c;
+    background-color: #574644;
     color: #fff;
 }
 
@@ -171,3 +171,13 @@ button {
     cursor: pointer;
     font-size: 16px;
 }
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+  }
