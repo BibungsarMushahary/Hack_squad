@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>apnaConnect</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>apnaConnect</h1>
+        <div class="lang-dropdown">
+            <button class="lang-btn">Lang</button>
+            <div class="lang-dropdown-content">
+                <a href="#" onclick="changeLanguage('en')">English</a>
+                <a href="#" onclick="changeLanguage('hi')">Hindi</a>
+                <a href="#" onclick="changeLanguage('other')">Others</a>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" id="issuesTab">Issues</a></li>
+                <li><a href="#" id="noticeTab">Notice</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="homePage">
+          
+            <!-- Buttons for help and emergency -->
+            <div class="buttons">
+                <button id="needHelpBtn">Need any Help?</button>
+                <button id="emergencyBtn" class="red">+Emergency</button>
+            </div>
+        </div>
+
+        <!-- Popup for help form -->
+        <div id="helpPopup" class="popup">
+            <div class="popup-content">
+                <span class="close">&times;</span>
+                <h2>Need any Help?</h2>
+                <form id="helpForm">
+                    <label for="anonymousToggle">Stay Anonymous</label>
+                    <input type="checkbox" id="anonymousToggle" checked><br>
+                    <input type="text" id="nameInput" placeholder="Name"><br>
+                    <input type="text" id="addressInput" placeholder="Address"><br>
+                    <textarea id="detailsInput" placeholder="Details of issue"></textarea><br>
+                    <input type="file" id="mediaInput"><br>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Popup for emergency options -->
+        <div id="emergencyPopup" class="popup">
+            <div class="popup-content">
+                <span class="close">&times;</span>
+                <h2>Emergency</h2>
+                <ul>
+                    <li><button id="callPoliceBtn">Call Police</button></li>
+                    <li><button id="callAmbulanceBtn">Call Ambulance</button></li>
+                    <li><button id="reportBtn">Report</button></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Popup for report form -->
+        <div id="reportPopup" class="popup">
+            <div class="popup-content">
+                <span class="close">&times;</span>
+                <h2>Report</h2>
+                <form id="reportForm">
+                    <input type="text" id="reportDetailsInput" placeholder="Details of report"><br>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Display section for issues -->
+        <div id="issuesPage" style="display: none;">
+            <div id="sortOptions">
+                <label for="sortSelect">Sort by:</label>
+                <select id="sortSelect">
+                    <option value="votes">By Votes</option>
+                    <option value="recent">By Recent</option>
+                </select>
+            </div>
+            <!-- Issues will be displayed here -->
+        </div>
+
+        <!-- Display section for notices -->
+        <div id="noticePage" style="display: none;">
+            <h2>Important Notices</h2>
+            <div class="notice">
+                <h3>Food Distribution</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere ligula a nunc porttitor, eget gravida sem posuere.</p>
+            </div>
+            <div class="notice">
+                <h3>Flood Warning</h3>
+                <p>Etiam et sapien at leo interdum iaculis. Morbi nec dolor eu odio cursus efficitur.</p>
+            </div>
+            <div class="notice">
+                <h3>Local News</h3>
+                <p>Nullam auctor, purus in dignissim tincidunt, nisi leo viverra risus, eu sodales urna nisl vel sapien.</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
